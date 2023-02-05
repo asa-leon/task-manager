@@ -1,11 +1,10 @@
-import React from "react"
-import { StyleSheet, Text, View } from "react-native"
-import GanttChart from "../components/gantt-chart"
+import React from "react";
+import { StyleSheet, Text, View } from "react-native";
 
-export default function App() {
+export default function GanttChart() {
   return (
     <View style={styles.container}>
-      <GanttChart />
+      <Text style={styles.text}>Gantt Chart Component View</Text>
     </View>
   );
 }
