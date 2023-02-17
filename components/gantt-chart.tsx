@@ -1,5 +1,5 @@
 import React from "react"
-import { StyleSheet, Text, View, FlatList } from "react-native"
+import { StyleSheet, Text, View, FlatList, Dimensions } from "react-native"
 import InsetShadow from "react-native-inset-shadow"
 
 const iPhone8ViewportWidth: number = 375
@@ -24,6 +24,7 @@ export default function GanttChart() {
 			<View style={styles.componentContainer}>
 
 				<View style={styles.datesWrapper}>
+					{/* render dates */}
 					{
 						dates.map( date => {
 							return (
@@ -34,6 +35,13 @@ export default function GanttChart() {
 							)
 						})
 					}
+
+				</View>
+				
+				{/* render line of now */}
+				<View style={styles.nowWrapper}>
+					<View style={styles.nowLine} />
+					<Text style={[styles.textColor, styles.nowText]}>Now</Text>
 				</View>
 
 				<View style={styles.ganttBarShapesWrapper}>
@@ -52,7 +60,7 @@ export default function GanttChart() {
 										shadowRadius={12}
 										shadowOffset={5}
 										elevation={50}
-										shadowOpacity={0.5}
+										shadowOpacity={0.2}
 										color='#000000'
 									>
 										<View style={styles.textWrapper}>
@@ -82,6 +90,7 @@ const styles = StyleSheet.create({
 		backgroundColor: '#000'
 	},
 	componentContainer: {
+		position: 'relative',
 		height: iPhone8ViewportHeight / 2,
 		marginHorizontal: defaultMarginHorizontal
 	},
@@ -131,5 +140,21 @@ const styles = StyleSheet.create({
 	dayText: {
 		fontSize: 12,
 		fontWeight: '300',
+	},
+	nowWrapper: {
+		position: 'absolute',
+		bottom: 60,
+		left: iPhone8ViewportWidth / 2 - defaultMarginHorizontal,
+		alignItems: 'center',
+		zIndex: 10,
+	},
+	nowLine: {
+		width: 1,
+		height: 200,
+		backgroundColor: 'rgba(255, 255, 255, 0.8)'
+	},
+	nowText: {
+		fontSize: 10,
+		fontWeight: '100',
 	}
 })
