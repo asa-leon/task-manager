@@ -8,6 +8,7 @@ const nextConfig = withExpo({
     "react-native",
     "expo",
     // Add more React Native / Expo packages here...
+	"react-native-inset-shadow",
   ],
   experimental: {
     forceSwcTransforms: true,
