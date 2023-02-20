@@ -20,7 +20,6 @@ const ganttBarWidths: Array<number> = [100, 50]
 
 export default function GanttChart() {
 	return (
-		<View style={styles.iPhone8Viewport}>
 			<View style={styles.componentContainer}>
 
 				<View style={styles.datesWrapper}>
@@ -28,7 +27,7 @@ export default function GanttChart() {
 					{
 						dates.map( date => {
 							return (
-								<View style={styles.dates}>
+								<View style={styles.dates} key={date.date}>
 									<Text style={[styles.textColor, styles.dateText]}>{date.date}</Text>
 									<Text style={[styles.textColor, styles.dayText]}>{date.day}</Text>
 								</View>
@@ -79,19 +78,15 @@ export default function GanttChart() {
 					}	
 				</View>
 			</View>
-		</View>
 	)
 }
 
 const styles = StyleSheet.create({
-	iPhone8Viewport: {
-		width: iPhone8ViewportWidth,
-		height: iPhone8ViewportHeight,
-		backgroundColor: '#000'
-	},
 	componentContainer: {
-		position: 'relative',
+		flex: 1,
+		width: iPhone8ViewportWidth - (defaultMarginHorizontal * 2),
 		height: iPhone8ViewportHeight / 2,
+		position: 'relative',
 		marginHorizontal: defaultMarginHorizontal
 	},
 	textColor: {
