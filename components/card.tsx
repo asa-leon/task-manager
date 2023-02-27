@@ -45,7 +45,7 @@ export default function Card() {
 										shadowRadius={12}
 										shadowOffset={5}
 										elevation={50}
-										shadowOpacity={0.2}
+										shadowOpacity={0.25}
 										color='#000000'
 									>
 										<View style={styles.taskWrapper}>
@@ -89,10 +89,11 @@ export default function Card() {
 
 const styles = StyleSheet.create({
 	componentContainer: {
+		flex: 3,
 		width: iPhone8ViewportWidth - (defaultMarginHorizontal * 2),
-		height: iPhone8ViewportHeight / 2,
+		//height: iPhone8ViewportHeight / 2,
 		position: 'relative',
-		marginHorizontal: defaultMarginHorizontal
+		margin: defaultMarginHorizontal
 	},
 	textColor: {
 		color: '#ffffff',

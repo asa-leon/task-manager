@@ -1,4 +1,5 @@
-const { withExpo } = require("@expo/next-adapter");
+const { withExpo } = require("@expo/next-adapter")
+const withImages = require('next-images')
 
 /** @type {import('next').NextConfig} */
 const nextConfig = withExpo({
@@ -9,6 +10,7 @@ const nextConfig = withExpo({
     "expo",
     // Add more React Native / Expo packages here...
 	"react-native-inset-shadow",
+	
   ],
   experimental: {
     forceSwcTransforms: true,
